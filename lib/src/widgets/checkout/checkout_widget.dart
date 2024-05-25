@@ -46,7 +46,6 @@ class CheckoutWidget extends StatefulWidget {
 
 class _CheckoutWidgetState extends BaseState<CheckoutWidget>
     with TickerProviderStateMixin {
-  static const tabBorderRadius = BorderRadius.all(Radius.circular(4.0));
   final Charge _charge;
   int? _currentIndex = 0;
   var _showTabs = true;
@@ -166,7 +165,7 @@ class _CheckoutWidgetState extends BaseState<CheckoutWidget>
   }
 
   Widget _buildTitle() {
-    final accentColor = context.colorScheme().secondary;
+    final accentColor = context.colorScheme().primary;
     var emailAndAmount = Column(
       crossAxisAlignment: CrossAxisAlignment.end,
       children: <Widget>[
@@ -188,7 +187,7 @@ class _CheckoutWidgetState extends BaseState<CheckoutWidget>
               Text(
                 'Pay',
                 style: TextStyle(
-                    fontSize: 14.0, color: context.textTheme().headline1?.color),
+                    fontSize: 14.0, color: context.textTheme().displayLarge?.color),
               ),
               SizedBox(
                 width: 5.0,
@@ -197,7 +196,7 @@ class _CheckoutWidgetState extends BaseState<CheckoutWidget>
                   child: Text(Utils.formatAmount(_charge.amount),
                       style: TextStyle(
                           fontSize: 15.0,
-                          color: context.textTheme().headline6?.color,
+                          color: context.textTheme().titleLarge?.color,
                           fontWeight: FontWeight.bold)))
             ],
           )
@@ -252,22 +251,6 @@ class _CheckoutWidgetState extends BaseState<CheckoutWidget>
           labelColor: accentColor,
           labelStyle:
               new TextStyle(fontSize: 14.0, fontWeight: FontWeight.w500),
-          indicator: new ShapeDecoration(
-            shape: RoundedRectangleBorder(
-                  borderRadius: tabBorderRadius,
-                  side: BorderSide(
-                    color: accentColor,
-                    width: 1.0,
-                  ),
-                ) +
-                const RoundedRectangleBorder(
-                  borderRadius: tabBorderRadius,
-                  side: BorderSide(
-                    color: Colors.transparent,
-                    width: 6.0,
-                  ),
-                ),
-          ),
           tabs: _methodWidgets.map<Tab>((MethodItem m) {
             return new Tab(
               text: m.text,
