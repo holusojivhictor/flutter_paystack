@@ -69,7 +69,7 @@ class _CardInputState extends State<CardInput> {
           ),
           new Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               new Flexible(
                 child: new DateField(

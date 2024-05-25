@@ -190,6 +190,7 @@ class _Paystack {
     }());
 
     CheckoutResponse? response = await showDialog(
+      useSafeArea: false,
       barrierDismissible: false,
       context: context,
       builder: (BuildContext context) => new CheckoutWidget(
