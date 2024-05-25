@@ -68,7 +68,7 @@ class _SuccessfulWidgetState extends State<SuccessfulWidget>
 
   @override
   Widget build(BuildContext context) {
-    final sceondaryColor = context.colorScheme().secondary;
+    final sceondaryColor = context.colorScheme().primary;
     return new Container(
       child: new CustomAnimatedWidget(
         controller: _mainController,
@@ -84,7 +84,7 @@ class _SuccessfulWidgetState extends State<SuccessfulWidget>
             ),
             sizedBox,
             Text(
-              'Payment Successful',
+              'Payment Successful. Refreshing...',
               style: TextStyle(
                 color: context.textTheme().headline6?.color,
                 fontWeight: FontWeight.w500,
